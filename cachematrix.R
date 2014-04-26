@@ -35,7 +35,7 @@ cacheSolve <- function(x, ...) {
     return(inverse)                                # .. we attain it via return from makeCacheMatrix that stores it
   }
   matrix <- x$getMatrix()                          # if there is no inverse, we read in the matrix..
-  inverse <- solve(matrix)                         # .. we calculate it
+  inverse <- solve(matrix)                         # .. we calculate the inverse
   x$setInverse(inverse)                            # .. and cache it for future use.
   inverse
 }
