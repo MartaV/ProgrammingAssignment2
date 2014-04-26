@@ -1,6 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
+## These are a pair of functions that cache and calculate the inverse of a
+#  an input matrix. Detailed description of each follows, with an example 
+#  test run at the end of this file.
+
 ## Your assignment is to write a pair of functions that cache the inverse of a matrix.
 
 ## This is a function that takes a matrix 'x' as argument and can cache its inverse:
@@ -28,7 +32,7 @@ cacheSolve <- function(x, ...) {
   inverse <- x$getInverse()                          # calling getInverse function 
   if(!is.null(inverse)) {                          # i.e. if there is an inverse already cached...
     message("Getting cached inverse.")
-    return(inverse)                                # .. we simply attain it via return from makeCacheMatrix that stores it
+    return(inverse)                                # .. we attain it via return from makeCacheMatrix that stores it
   }
   matrix <- x$getMatrix()                          # if there is no inverse, we read in the matrix..
   inverse <- solve(matrix)                         # .. we calculate it
@@ -46,18 +50,15 @@ cacheSolve <- function(x, ...) {
 # > cacheMatrix$getInverse()
 # NULL       
 
-## So as of now, there is no inverse yet. No we can call
-## cacheSolve on cacheMatrix to calculate the inverse:
+## So as of now, there is no inverse yet. No we can call cacheSolve on cacheMatrix to calculate the inverse:
 # > cacheSolve(cacheMatrix)      
 # [,1] [,2]
 # [1,]   -2  1.5
 # [2,]    1 -0.5
 
-## Again, we try to call getInverse to see if there exists
-## an inverse now:
+## Again, we try to call getInverse to see if there exists an inverse now:
 # > cacheMatrix$getInverse()
 # [,1] [,2]
 # [1,]   -2  1.5
 # [2,]    1 -0.5
-## Indeed, the inverse is has now been set in makeCacheMatrix 
-## function and can be recalled as needed
+## Indeed, the inverse is has now been set in makeCacheMatrix function and can be recalled as needed.
